@@ -1,4 +1,13 @@
 package com.shivamai.systems.aitestpilot.chat.dto;
 
-public record ChatRequest(String message) {
+import jakarta.validation.constraints.NotBlank;
+
+public record ChatRequest(
+
+        String sessionId,
+
+        @NotBlank(message = "Message cannot be blank")
+        String message
+
+) {
 }
